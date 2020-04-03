@@ -46,3 +46,10 @@ java -jar signapk.jar testkey.x509.pem testkey.pk8 test.apk test_signed.apk
 ```
 keytool-importkeypair -k ~/.android/debug.keystore -p android -pk8 platform.pk8 -cert platform.x509.pem -alias platform
 ```
+
+#### keytool
+keytool在目录下jdk1.8.0_221\bin
+
+keytool -printcert -jarfile xxx.apk# 最后是你APK的位置，好像zip压缩也可以
+keytool  -printcert -file META-INF/CERT.RSA
+keytool -list -v -keystore platform.jks 查看签名信息
